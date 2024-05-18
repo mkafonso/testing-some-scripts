@@ -1,6 +1,8 @@
 import { INVALID_SITEMAP_URL_ERROR } from "./invalid-sitemap-url-error.js";
 
 export function errorHandler(err, req, res, next) {
+  console.log(err);
+
   if (err instanceof INVALID_SITEMAP_URL_ERROR) {
     res.writeHead(400, { "Content-Type": "application/json" });
     res.end(
